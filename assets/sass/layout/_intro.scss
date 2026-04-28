@@ -1,0 +1,117 @@
+///
+/// Hyperspace by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Intro */
+
+	#intro {
+		background-attachment: fixed;
+		background-image: url('images/intro.svg');
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+
+		> .inner {
+			margin-top: -6em;
+		}
+
+		p {
+			font-size: 1.25em;
+
+			@include breakpoint('<=medium') {
+				br {
+					display: none;
+				}
+			}
+
+			@include breakpoint('<=small') {
+				font-size: 1em;
+			}
+		}
+
+		.intro-feature {
+			display: flex;
+			align-items: flex-start;
+			gap: 2.5em;
+			margin-top: 1.5em;
+			max-width: 62em;
+		}
+
+		.intro-group-photo {
+			display: block;
+			width: min(480px, 45vw);
+			max-height: 330px;
+			object-fit: cover;
+			margin: 0 0 1em 0;
+			border-radius: 0.25em;
+		}
+
+		.intro-team-names {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 2em;
+			width: min(480px, 45vw);
+			color: #ffffff;
+
+			p {
+				margin: 0 0 0.4em 0;
+				font-size: 1em;
+				line-height: 1.4;
+			}
+		}
+
+		.intro-about {
+			width: min(30em, 42vw);
+			color: #ffffff;
+			margin-top: -0.6em;
+
+			h2 {
+				margin: 1.1em 0 0.5em 0;
+				color: #ffffff;
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+
+			p {
+				margin: 0;
+				color: #ffffff;
+				font-size: 1em;
+				line-height: 1.6;
+			}
+		}
+
+		@include breakpoint('<=large') {
+			background-attachment: scroll;
+		}
+
+		@include breakpoint('<=medium') {
+			.intro-feature {
+				gap: 1.5em;
+			}
+		}
+
+		@include breakpoint('<=small') {
+			> .inner {
+				margin-top: 0;
+			}
+
+			.intro-group-photo {
+				width: min(420px, 43vw);
+				max-height: 288px;
+			}
+
+			.intro-team-names {
+				width: min(420px, 43vw);
+				gap: 1.25em;
+			}
+
+			.intro-about {
+				width: 43vw;
+				margin-top: 0;
+			}
+		}
+	}
