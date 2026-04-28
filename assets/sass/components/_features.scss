@@ -6,6 +6,53 @@
 
 /* Features */
 
+	.solar-info-graph-row {
+		@include vendor('display', 'flex');
+		@include vendor('align-items', 'center');
+		gap: 2em;
+		margin: 0 0 2em 0;
+	}
+
+	.solar-info-graph {
+		display: block;
+		width: min(100%, 30em);
+		margin: 0;
+		border-radius: 0.25em;
+	}
+
+	.solar-info-graph-row p {
+		margin: 0;
+		max-width: 32em;
+	}
+
+	.cost-graph {
+		display: block;
+		width: min(100%, 24em);
+		margin: 0 0 2em 0;
+		border-radius: 0.25em;
+	}
+
+	.report-frame {
+		background: #ffffff;
+		border: 0;
+		border-radius: 0.25em;
+		display: block;
+		height: 92vh;
+		margin: 0 auto;
+		max-width: 72em;
+		width: 100%;
+	}
+
+	@include breakpoint('<=small') {
+		.solar-info-graph-row {
+			display: block;
+		}
+
+		.solar-info-graph-row p {
+			margin-top: 1.25em;
+		}
+	}
+
 	.features {
 		@include vendor('display', 'flex');
 		@include vendor('flex-wrap', 'wrap');

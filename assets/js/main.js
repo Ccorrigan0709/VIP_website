@@ -150,20 +150,25 @@
 			})
 			.each(function() {
 
-				var	$this = $(this),
-					$image = $this.find('.image'),
-					$img = $image.find('img'),
-					x;
+				var $this = $(this);
 
-				// Assign image.
-					$image.css('background-image', 'url(' + $img.attr('src') + ')');
+				$this.find('.image').each(function() {
 
-				// Set background position.
-					if (x = $img.data('position'))
-						$image.css('background-position', x);
+					var	$image = $(this),
+						$img = $image.find('img'),
+						x;
 
-				// Hide <img>.
-					$img.hide();
+					// Assign image.
+						$image.css('background-image', 'url(' + $img.attr('src') + ')');
+
+					// Set background position.
+						if (x = $img.data('position'))
+							$image.css('background-position', x);
+
+					// Hide <img>.
+						$img.hide();
+
+				});
 
 			});
 

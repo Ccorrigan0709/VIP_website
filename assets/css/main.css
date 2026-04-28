@@ -1978,6 +1978,61 @@ input, select, textarea {
 
 /* Features */
 
+	.solar-info-graph-row {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		gap: 2em;
+		margin: 0 0 2em 0;
+	}
+
+	.solar-info-graph {
+		display: block;
+		width: min(100%, 30em);
+		margin: 0;
+		border-radius: 0.25em;
+	}
+
+	.solar-info-graph-row p {
+		margin: 0;
+		max-width: 32em;
+	}
+
+	.cost-graph {
+		display: block;
+		width: min(100%, 24em);
+		margin: 0 0 2em 0;
+		border-radius: 0.25em;
+	}
+
+	.report-frame {
+		background: #ffffff;
+		border: 0;
+		border-radius: 0.25em;
+		display: block;
+		height: 92vh;
+		margin: 0 auto;
+		max-width: 72em;
+		width: 100%;
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.solar-info-graph-row {
+			display: block;
+		}
+
+		.solar-info-graph-row p {
+			margin-top: 1.25em;
+		}
+
+	}
+
 	.features {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -2987,17 +3042,109 @@ input, select, textarea {
 
 /* Spotlights */
 
-	.spotlights > section {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
+		.spotlights > section {
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
 		-moz-flex-direction: row;
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
-		min-height: 22.5em;
-	}
+			min-height: 22.5em;
+		}
+
+			.spotlights > section.location-row {
+				height: 22.5em;
+				min-height: 22.5em;
+				width: 100%;
+			}
+
+				.spotlights > section.location-row > .image.location-image {
+					-moz-flex: 0 0 25em;
+					-webkit-flex: 0 0 25em;
+					-ms-flex: 0 0 25em;
+					flex: 0 0 25em;
+					width: 25em;
+					max-width: 25em;
+				}
+
+				.spotlights > section.location-row > .content {
+					-moz-flex: 1 1 auto;
+					-webkit-flex: 1 1 auto;
+					-ms-flex: 1 1 auto;
+					flex: 1 1 auto;
+					min-width: 36em;
+					width: auto;
+				}
+
+					.spotlights > section.location-row > .content > .inner {
+						max-width: 48em;
+					}
+
+			.spotlights > section.design-images {
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+				height: 22.5em;
+				min-height: 22.5em;
+				width: 100%;
+			}
+
+				.spotlights > section.design-images .design-detail {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					min-width: 0;
+				}
+
+				.spotlights > section.design-images .cad-stack {
+					display: -moz-flex;
+					display: -webkit-flex;
+					display: -ms-flex;
+					display: flex;
+					-moz-flex-direction: column;
+					-webkit-flex-direction: column;
+					-ms-flex-direction: column;
+					flex-direction: column;
+					min-width: 0;
+				}
+
+				.spotlights > section.design-images > .image,
+				.spotlights > section.design-images .design-detail > .image,
+				.spotlights > section.design-images .cad-stack > .image {
+					background-color: #ffffff;
+					background-repeat: no-repeat;
+					background-size: contain;
+					display: block;
+					position: relative;
+					width: 100%;
+				}
+
+				.spotlights > section.design-images .cad-stack > .image {
+					-moz-flex: 1 1 0;
+					-webkit-flex: 1 1 0;
+					-ms-flex: 1 1 0;
+					flex: 1 1 0;
+				}
+
+					.spotlights > section.design-images .cad-stack > .image.cad-one-image {
+						background-size: 72%;
+					}
+
+					.spotlights > section.design-images > .image.sketch-image {
+						background-size: 86%;
+					}
+
+						.spotlights > section.design-images > .image.sketch-image span {
+							color: #000000;
+							font-weight: bold;
+							left: 0;
+							position: absolute;
+							text-align: center;
+							text-transform: none;
+							top: 1em;
+							width: 100%;
+							z-index: 2;
+						}
 
 		body.is-ie .spotlights > section {
 			min-height: 0;
@@ -3012,11 +3159,18 @@ input, select, textarea {
 			width: 25em;
 		}
 
-			.spotlights > section > .image.location-image {
-				background-color: #3e4094;
-				background-repeat: no-repeat;
-				background-size: contain;
-			}
+				.spotlights > section > .image.location-image {
+					background-color: #3e4094;
+					background-repeat: no-repeat;
+					background-size: contain;
+					overflow: hidden;
+				}
+
+				.spotlights > section > .image.angle-image {
+					background-color: #5052b5;
+					background-repeat: no-repeat;
+					background-size: contain;
+				}
 
 			.spotlights > section > .image img {
 				border-radius: 0;
@@ -3037,6 +3191,7 @@ input, select, textarea {
 				position: absolute;
 				top: 0;
 				width: 100%;
+				z-index: 1;
 			}
 
 		.spotlights > section > .content {
@@ -3056,6 +3211,21 @@ input, select, textarea {
 			width: 50em;
 			-ms-flex: 1;
 		}
+
+			.spotlights > section > .content .formula {
+				margin-top: 1.25em;
+			}
+
+				.spotlights > section > .content .formula p {
+					color: #ffffff;
+					font-size: 0.95em;
+					line-height: 1.5;
+					margin: 0 0 0.35em 0;
+				}
+
+					.spotlights > section > .content .formula p:first-child {
+						font-family: "Courier New", monospace;
+					}
 
 			.spotlights > section > .content > .inner {
 				-moz-transform: translateX(0) translateY(0);
@@ -3105,12 +3275,39 @@ input, select, textarea {
 				display: block;
 			}
 
+				.spotlights > section.location-row {
+					height: auto;
+					min-height: 0;
+					width: 100%;
+				}
+
 				.spotlights > section > .image {
 					width: 100%;
 					height: 50vh;
 				}
 
+				.spotlights > section.location-row > .image.location-image {
+					max-width: none;
+					width: 100%;
+				}
+
+				.spotlights > section.design-images {
+					display: block;
+					height: auto;
+					min-height: 0;
+				}
+
+				.spotlights > section.design-images > .image,
+				.spotlights > section.design-images .design-detail {
+					width: 100%;
+				}
+
 				.spotlights > section > .content {
+					width: 100%;
+				}
+
+				.spotlights > section.location-row > .content {
+					min-width: 0;
 					width: 100%;
 				}
 
@@ -3263,6 +3460,10 @@ input, select, textarea {
 
 		.wrapper.style3 {
 			background-color: #b74e91;
+		}
+
+		#two-more.wrapper.style3 {
+			background-color: #2f8f5b;
 		}
 
 		.wrapper.style3-alt {
